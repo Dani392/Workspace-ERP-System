@@ -30,31 +30,27 @@ Un panel de control centraliza las condiciones contractuales (NIF, % IVA, % IRPF
 * **Generación de PDFs One-Click:** Mediante un script personalizado en Google Apps Script, el sistema detecta automáticamente el mes activo, calcula las bases imponibles e impuestos, y genera la factura final en PDF guardándola directamente en una carpeta de Google Drive.
 * **Alertas Visuales:** Implementación de mapas de calor (escalas de color) para identificar rápidamente los clientes con mayor volumen de facturación y sistemas de alerta para cobros pendientes.
 
-> [!NOTE] 
-> *[AQUÍ IRÍA EL GIF DE LA FACTURA GENERÁNDOSE]*
+> ![Generación automática de factura](assets/videos/Fac_generation.gif)
 
 #### 2. Business Intelligence: Rentabilidad Percibida
 Más allá de sumar ingresos, el sistema evalúa la calidad del esfuerzo. Utiliza un algoritmo personalizado para calcular qué clientes son realmente más rentables.
 * **Fórmula Algorítmica:** Se aplica la fórmula matemática `(Ingresos / Horas Trabajadas)^1.2` para ponderar y premiar la eficiencia. Esto genera un mapa de calor automático que permite decisiones estratégicas sobre qué cuentas mantener, renegociar o descartar.
 
-> [!NOTE] 
-> *[AQUÍ IRÍA UNA CAPTURA DE LA PESTAÑA RENTABILIDAD]*
+> ![Rentabilidad Percibida](assets/images/Rentabilidad.jpg)  
 
 #### 3. Analítica Financiera (Dashboard de Estudio)
 Un panel de rendimiento que cruza automáticamente los datos de ingresos (cobros) y salidas (pagos/gastos) para calcular el flujo de caja real.
 * **Crecimiento Intermensual (MoM):** Tablas automatizadas que calculan el porcentaje de crecimiento (MoM Growth %) con respecto al mes anterior.
 * **Visualización de Datos:** Gráficos de barras dinámicos que muestran el balance de beneficios y el margen de ahorro neto, ofreciendo una radiografía financiera instantánea.
 
-> [!NOTE] 
-> *[AQUÍ IRÍA UNA CAPTURA DE LA PESTAÑA ESTUDIO Y GRÁFICAS]*
+> ![Dashboard de Estudio](assets/images/Estudio.jpg)
 
 #### 4. Gestión de Recursos Humanos y Control de Clientes (SLAs)
 El sistema cuenta con paneles de configuración mensual con una interfaz limpia basada en columnas agrupadas, permitiendo ajustar variables sin saturar visualmente al usuario.
 * **Control Híbrido de Clientes:** Configuración individualizada del modelo de facturación (mensualidad fija, tarifa por horas o modelo mixto). Incluye un sistema de alertas que avisa automáticamente cuando se supera el límite de horas pactadas (SLA).
 * **Motor de Nóminas (Payroll Engine):** El módulo de equipo calcula automáticamente la compensación de los trabajadores mediante fórmulas condicionales avanzadas. El algoritmo detecta el umbral de horas contratadas (tarifa base) y transiciona automáticamente a la tarifa de horas extra a partir de la hora límite, evaluando datos traídos en tiempo real desde las hojas individuales.
 
-> [!NOTE] 
-> *[AQUÍ IRÍA LA IMAGEN DE LA PESTAÑA EQUIPO Y LAS COLUMNAS AGRUPADAS]*
+> ![Dashboard de Estudio](assets/images/Equipo.jpg)
 
 #### 5. Control de Gastos Operativos
 * **Clasificación automatizada:** Gestión de compras mediante conceptos y tablas dinámicas que resumen las salidas de capital en tiempo real, permitiendo auditar en qué áreas se gasta más de un simple vistazo.
