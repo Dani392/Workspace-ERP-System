@@ -39,9 +39,9 @@ Más allá de sumar ingresos, el sistema evalúa la calidad del esfuerzo. Utiliz
 > ![Rentabilidad Percibida](assets/images/Rentabilidad.jpg)  
 
 #### 3. Analítica Financiera (Dashboard de Estudio)
-Un panel de rendimiento que cruza automáticamente los datos de ingresos (cobros) y salidas (pagos/gastos) para calcular el flujo de caja real.
-* **Crecimiento Intermensual (MoM):** Tablas automatizadas que calculan el porcentaje de crecimiento (MoM Growth %) con respecto al mes anterior.
-* **Visualización de Datos:** Gráficos de barras dinámicos que muestran el balance de beneficios y el margen de ahorro neto, ofreciendo una radiografía financiera instantánea.
+Un panel de rendimiento que cruza automáticamente los datos de ingresos (cobros) y salidas (pagos/gastos) para calcular el flujo de caja real. Incorpora un sistema de control de márgenes que diferencia automáticamente entre gastos operativos internos y compras refacturadas a clientes, calculando el beneficio neto real.
+* **Crecimiento Intermensual (MoM):** Monitorización automática de la variación porcentual (*Month-over-Month*) tanto en la retención/adquisición de clientes como en el beneficio neto, facilitando la detección de tendencias a corto y largo plazo.
+* **Visualización de Datos:** Gráficos de barras dinámicos que muestran el balance de beneficios y el margen operativo, ofreciendo una radiografía financiera instantánea.
 
 > ![Dashboard de Estudio](assets/images/Estudio.jpg)
 
@@ -50,7 +50,7 @@ El sistema cuenta con paneles de configuración mensual con una interfaz limpia 
 * **Control Híbrido de Clientes:** Configuración individualizada del modelo de facturación (mensualidad fija, tarifa por horas o modelo mixto). Incluye un sistema de alertas que avisa automáticamente cuando se supera el límite de horas pactadas (SLA).
 * **Motor de Nóminas (Payroll Engine):** El módulo de equipo calcula automáticamente la compensación de los trabajadores mediante fórmulas condicionales avanzadas. El algoritmo detecta el umbral de horas contratadas (tarifa base) y transiciona automáticamente a la tarifa de horas extra a partir de la hora límite, evaluando datos traídos en tiempo real desde las hojas individuales.
 
-> ![Dashboard de Estudio](assets/images/Equipo.jpg)
+> ![Gestión de Equipo](assets/images/Equipo.jpg)
 
 #### 5. Control de Gastos Operativos
 * **Clasificación automatizada:** Gestión de compras mediante conceptos y tablas dinámicas que resumen las salidas de capital en tiempo real, permitiendo auditar en qué áreas se gasta más de un simple vistazo.
@@ -72,3 +72,13 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
     e.range.setValue(false); // Reseteo automático de la interfaz
   }
 }
+```
+
+---
+
+### 🚀 Escalabilidad y Roadmap Futuro
+
+Gracias a la estructura de datos aplanada y centralizada mediante consultas `QUERY`, el núcleo del sistema actúa como un backend robusto listo para desacoplarse de la interfaz de hojas de cálculo. Los próximos pasos de escalabilidad incluyen:
+
+* **Frontend Móvil (AppSheet):** Transición de los nodos de entrada basados en hojas de cálculo a una aplicación móvil nativa. Esto permitirá a los trabajadores registrar horas y capturar tickets de gastos directamente desde sus teléfonos, inyectando los datos al ERP en tiempo real.
+* **Dashboards Ejecutivos (Looker Studio):** Conexión del Cuadro de Mando maestro a paneles interactivos de Looker Studio. Esto proporcionará a los responsables y directivos una visualización gráfica avanzada del estado financiero y la rentabilidad, sin necesidad de darles acceso al motor de la base de datos.
