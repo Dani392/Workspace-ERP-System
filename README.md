@@ -48,9 +48,16 @@ Un panel de rendimiento que cruza automáticamente los datos de ingresos (cobros
 > [!NOTE] 
 > *[AQUÍ IRÍA UNA CAPTURA DE LA PESTAÑA ESTUDIO Y GRÁFICAS]*
 
-#### 4. Gestión de Recursos Humanos y Gastos Operativos
-* **Módulo de Equipo:** Control granular de costes de personal, desglosando precios por hora, horas pactadas por contrato y gestión de horas extra.
-* **Módulo de Gastos:** Clasificación automatizada de compras mediante conceptos y tablas dinámicas que resumen las salidas de capital en tiempo real, permitiendo auditar en qué áreas se gasta más.
+#### 4. Gestión de Recursos Humanos y Control de Clientes (SLAs)
+El sistema cuenta con paneles de configuración mensual con una interfaz limpia basada en columnas agrupadas, permitiendo ajustar variables sin saturar visualmente al usuario.
+* **Control Híbrido de Clientes:** Configuración individualizada del modelo de facturación (mensualidad fija, tarifa por horas o modelo mixto). Incluye un sistema de alertas que avisa automáticamente cuando se supera el límite de horas pactadas (SLA).
+* **Motor de Nóminas (Payroll Engine):** El módulo de equipo calcula automáticamente la compensación de los trabajadores mediante fórmulas condicionales avanzadas. El algoritmo detecta el umbral de horas contratadas (tarifa base) y transiciona automáticamente a la tarifa de horas extra a partir de la hora límite, evaluando datos traídos en tiempo real desde las hojas individuales.
+
+> [!NOTE] 
+> *[AQUÍ IRÍA LA IMAGEN DE LA PESTAÑA EQUIPO Y LAS COLUMNAS AGRUPADAS]*
+
+#### 5. Control de Gastos Operativos
+* **Clasificación automatizada:** Gestión de compras mediante conceptos y tablas dinámicas que resumen las salidas de capital en tiempo real, permitiendo auditar en qué áreas se gasta más de un simple vistazo.
 
 ---
 
