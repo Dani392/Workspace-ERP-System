@@ -1,75 +1,75 @@
 # Workspace-ERP-System
 
-Un sistema ERP (Enterprise Resource Planning) completo, descentralizado y automatizado, construido íntegramente sobre el ecosistema de Google Workspace. 
+A complete, decentralized, and automated ERP (Enterprise Resource Planning) system built entirely on the Google Workspace ecosystem.
 
-Este proyecto nace de la necesidad de ir más allá de las hojas de cálculo tradicionales, transformándolas en una aplicación de gestión empresarial real. Combina bases de datos relacionales simuladas, automatización mediante Google Apps Script y algoritmos personalizados de Business Intelligence para optimizar la facturación, el seguimiento de clientes y la rentabilidad del equipo.
+This project was born from the need to go beyond traditional spreadsheets, transforming them into a real business management application. It combines simulated relational databases, automation through Google Apps Script, and custom Business Intelligence algorithms to optimize billing, client tracking, and team profitability.
 
-### 💡 Aspectos Destacados
-* **Facturación Automatizada:** Generación de facturas en PDF con cálculo dinámico de impuestos (IVA/IRPF) a través de Apps Script.
-* **Arquitectura Descentralizada:** Nodos de entrada de datos individuales para trabajadores, sincronizados en tiempo real con un Cuadro de Mando central.
-* **Business Intelligence Integrado:** Algoritmo propio para calcular y visualizar el rendimiento y la rentabilidad real de cada cuenta de cliente.
-
----
-
-### ⚙️ Arquitectura de Datos y Flujo de Trabajo
-
-Para garantizar la integridad de la información y permitir el acceso simultáneo de múltiples usuarios sin comprometer el archivo maestro, el sistema está diseñado bajo una arquitectura de nodos distribuidos:
-
-* **Nodos de Entrada Descentralizados:** Los empleados y responsables registran sus horas o gastos en hojas de cálculo individuales (instancias separadas). Esto actúa como un *frontend* de recolección de datos que aísla y protege la lógica de negocio del Cuadro de Mando central.
-* **Sincronización Dinámica (`IMPORTRANGE`):** El sistema mantiene una comunicación bidireccional en tiempo real. El archivo maestro alimenta a los nodos periféricos con los datos activos (por ejemplo, el desplegable de clientes). Si un cliente se desactiva en el panel central, su acceso se revoca instantáneamente en todas las hojas de los trabajadores, asegurando la consistencia global.
-* **Emulación de Bases de Datos Relacionales (Vistas SQL):** Las pestañas dedicadas a `QUERY` procesan, filtran y "aplanan" la información consolidada de clientes, equipo y gastos. Este enfoque imita el comportamiento de las "Vistas" (Views) en bases de datos relacionales tradicionales, optimizando el rendimiento de búsqueda y dejando la estructura preparada para futuras integraciones de interfaces móviles.
+### 💡 Key Highlights
+* **Automated Billing:** Generation of PDF invoices with dynamic tax calculation (VAT/Income Tax) via Apps Script.
+* **Decentralized Architecture:** Individual data entry nodes for workers, synced in real-time with a central Dashboard.
+* **Integrated Business Intelligence:** Custom algorithm to calculate and visualize the real performance and profitability of each client account.
 
 ---
 
-### 📊 Características Principales (Módulos del Core)
+### ⚙️ Data Architecture & Workflow
 
-El sistema está dividido en módulos independientes que se comunican entre sí para ofrecer una visión 360º del negocio:
+To ensure data integrity and allow simultaneous access by multiple users without compromising the master file, the system is designed under a distributed node architecture:
 
-#### 1. Motor de Facturación Automatizada (Pipeline de Ventas)
-Un panel de control centraliza las condiciones contractuales (NIF, % IVA, % IRPF, modelo de facturación mensual o por horas).
-* **Generación de PDFs One-Click:** Mediante un script personalizado en Google Apps Script, el sistema detecta automáticamente el mes activo, calcula las bases imponibles e impuestos, y genera la factura final en PDF guardándola directamente en una carpeta de Google Drive.
-* **Alertas Visuales:** Implementación de mapas de calor (escalas de color) para identificar rápidamente los clientes con mayor volumen de facturación y sistemas de alerta para cobros pendientes.
-
-> ![Generación automática de factura](assets/videos/Fac_generation.gif)
-
-#### 2. Business Intelligence: Rentabilidad Percibida
-Más allá de sumar ingresos, el sistema evalúa la calidad del esfuerzo. Utiliza un algoritmo personalizado para calcular qué clientes son realmente más rentables.
-* **Fórmula Algorítmica:** Se aplica la fórmula matemática `(Ingresos / Horas Trabajadas)^1.2` para ponderar y premiar la eficiencia. Esto genera un mapa de calor automático que permite decisiones estratégicas sobre qué cuentas mantener, renegociar o descartar.
-
-> ![Rentabilidad Percibida](assets/images/Rentabilidad.jpg)  
-
-#### 3. Analítica Financiera (Dashboard de Estudio)
-Un panel de rendimiento que cruza automáticamente los datos de ingresos (cobros) y salidas (pagos/gastos) para calcular el flujo de caja real. Incorpora un sistema de control de márgenes que diferencia automáticamente entre gastos operativos internos y compras refacturadas a clientes, calculando el beneficio neto real.
-* **Crecimiento Intermensual (MoM):** Monitorización automática de la variación porcentual (*Month-over-Month*) tanto en la retención/adquisición de clientes como en el beneficio neto, facilitando la detección de tendencias a corto y largo plazo.
-* **Visualización de Datos:** Gráficos de barras dinámicos que muestran el balance de beneficios y el margen operativo, ofreciendo una radiografía financiera instantánea.
-
-> ![Dashboard de Estudio](assets/images/Estudio.jpg)
-
-#### 4. Gestión de Recursos Humanos y Control de Clientes (SLAs)
-El sistema cuenta con paneles de configuración mensual con una interfaz limpia basada en columnas agrupadas, permitiendo ajustar variables sin saturar visualmente al usuario.
-* **Control Híbrido de Clientes:** Configuración individualizada del modelo de facturación (mensualidad fija, tarifa por horas o modelo mixto). Incluye un sistema de alertas que avisa automáticamente cuando se supera el límite de horas pactadas (SLA).
-* **Motor de Nóminas (Payroll Engine):** El módulo de equipo calcula automáticamente la compensación de los trabajadores mediante fórmulas condicionales avanzadas. El algoritmo detecta el umbral de horas contratadas (tarifa base) y transiciona automáticamente a la tarifa de horas extra a partir de la hora límite, evaluando datos traídos en tiempo real desde las hojas individuales.
-
-> ![Gestión de Equipo](assets/images/Equipo.jpg)
-
-#### 5. Control de Gastos Operativos
-* **Clasificación automatizada:** Gestión de compras mediante conceptos y tablas dinámicas que resumen las salidas de capital en tiempo real, permitiendo auditar en qué áreas se gasta más de un simple vistazo.
+* **Decentralized Entry Nodes:** Employees and managers log their hours or expenses in individual spreadsheets (separate instances). This acts as a data collection *frontend* that isolates and protects the business logic from the central Dashboard.
+* **Dynamic Synchronization (`IMPORTRANGE`):** The system maintains two-way, real-time communication. The master file feeds active data to peripheral nodes (e.g., the client dropdown menu). If a client is deactivated in the central panel, their access is instantly revoked across all worker sheets, ensuring global consistency.
+* **Relational Database Emulation (SQL Views):** Dedicated `QUERY` tabs process, filter, and "flatten" consolidated information regarding clients, team, and expenses. This approach mimics the behavior of "Views" in traditional relational databases, optimizing search performance and leaving the structure ready for future mobile interface integrations.
 
 ---
 
-### 💻 Lógica de Automatización (Apps Script)
+### 📊 Core Features (Main Modules)
 
-El núcleo de la facturación está impulsado por código JavaScript integrado en el entorno de Workspace. El motor es capaz de calcular el desplazamiento dinámico de columnas para procesar la facturación de cualquier mes del año con una única función matemática:
+The system is divided into independent modules that communicate with each other to provide a 360º view of the business:
+
+#### 1. Automated Billing Engine (Sales Pipeline)
+A central dashboard manages contractual conditions (Tax ID, % VAT, % Income Tax, monthly or hourly billing model).
+* **One-Click PDF Generation:** Using a custom Google Apps Script, the system automatically detects the active month, calculates tax bases and taxes, and generates the final PDF invoice, saving it directly to a Google Drive folder.
+* **Visual Alerts:** Implementation of heatmaps (color scales) to quickly identify high-volume billing clients and alert systems for pending payments.
+
+> ![Automated invoice generation](assets/videos/Fac_generation.gif)
+
+#### 2. Business Intelligence: Perceived Profitability
+Beyond just adding up revenue, the system evaluates the quality of effort. It uses a custom algorithm to calculate which clients are truly the most profitable.
+* **Algorithmic Formula:** The mathematical formula `(Revenue / Hours Worked)^1.2` is applied to weight and reward efficiency. This automatically generates a heatmap that enables strategic decisions on which accounts to keep, renegotiate, or drop.
+
+> ![Perceived Profitability](assets/images/Rentabilidad.jpg)  
+
+#### 3. Financial Analytics (Studio Dashboard)
+A performance dashboard that automatically cross-references revenue (inflows) and expenses (outflows/payments) to calculate real cash flow. It incorporates a margin control system that automatically differentiates between internal operational expenses and purchases rebilled to clients, calculating the true net profit.
+* **Month-over-Month (MoM) Growth:** Automatic monitoring of the percentage variance (*Month-over-Month*) in both client retention/acquisition and net profit, facilitating the detection of short and long-term trends.
+* **Data Visualization:** Dynamic bar charts displaying the profit balance and operating margin, offering an instant financial snapshot.
+
+> ![Studio Dashboard](assets/images/Estudio.jpg)
+
+#### 4. HR Management and Client Control (SLAs)
+The system features monthly configuration panels with a clean interface based on grouped columns, allowing variable adjustments without visually overwhelming the user.
+* **Hybrid Client Control:** Individualized configuration of the billing model (fixed monthly fee, hourly rate, or mixed model). Includes an alert system that automatically notifies when agreed-upon hour limits (SLAs) are exceeded.
+* **Payroll Engine:** The team module automatically calculates worker compensation using advanced conditional formulas. The algorithm detects the contracted hours threshold (base rate) and automatically transitions to the overtime rate after the limit is reached, evaluating data pulled in real-time from individual sheets.
+
+> ![Team Management](assets/images/Equipo.jpg)
+
+#### 5. Operational Expense Control
+* **Automated Classification:** Purchase management using concepts and pivot tables that summarize capital outflows in real-time, allowing an at-a-glance audit of spending areas.
+
+---
+
+### 💻 Automation Logic (Apps Script)
+
+The core of the billing is powered by JavaScript code integrated into the Workspace environment. The engine can calculate dynamic column shifts to process billing for any month of the year using a single mathematical function:
 
 ```javascript
-// Ejemplo del motor dinámico de detección de meses para la facturación
+// Example of the dynamic month detection engine for billing
 if (columna >= 13 && (columna - 13) % 10 === 0) { 
   const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"];
   const indiceMes = (columna - 13) / 10; 
   
   if (indiceMes < 12) {
     crearFacturaDinamica(fila, meses[indiceMes], indiceMes);
-    e.range.setValue(false); // Reseteo automático de la interfaz
+    e.range.setValue(false); // Automatic interface reset
   }
 }
 ```
