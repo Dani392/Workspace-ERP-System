@@ -76,10 +76,10 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
 
 ---
 
-### 🚀 Escalabilidad y Roadmap Futuro
+### 🚀 Scalability & Future Roadmap
 
-Gracias a la estructura de datos aplanada y centralizada mediante consultas `QUERY`, el núcleo del sistema actúa como un backend robusto listo para desacoplarse de la interfaz de hojas de cálculo. Los próximos pasos de escalabilidad incluyen:
+Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be decoupled from the spreadsheet interface. Next scalability steps include:
 
-* **Frontend Móvil (AppSheet):** Transición de los nodos de entrada basados en hojas de cálculo a una aplicación móvil nativa. Esto permitirá a los trabajadores registrar horas y capturar tickets de gastos directamente desde sus teléfonos, inyectando los datos al ERP en tiempo real.
-* **Dashboards Ejecutivos (Looker Studio):** Conexión del Cuadro de Mando maestro a paneles interactivos de Looker Studio. Esto proporcionará a los responsables y directivos una visualización gráfica avanzada del estado financiero y la rentabilidad, sin necesidad de darles acceso al motor de la base de datos.
-* **Integración API (Cumplimiento Fiscal):** Evolución del motor de facturación para que actúe como pre-procesador de datos. El sistema prepara la base imponible y la lógica de negocio para exportar *payloads* estructurados (JSON) hacia pasarelas externas de facturación certificadas, garantizando el cumplimiento normativo (ej. VeriFactu en España) mediante una correcta separación de responsabilidades.
+* **Mobile Frontend (AppSheet):** Transition from spreadsheet-based entry nodes to a native mobile app. This will allow workers to log hours and capture expense receipts directly from their phones, injecting data into the ERP in real-time.
+* **Executive Dashboards (Looker Studio):** Connecting the master Dashboard to interactive Looker Studio panels. This will provide managers and executives with advanced graphical visualization of financial status and profitability, without needing access to the database engine.
+* **API Integration (Tax Compliance):** Evolving the billing engine to act as a data pre-processor. The system prepares the tax base and business logic to export structured payloads (JSON) to certified external billing gateways, ensuring regulatory compliance (e.g., VeriFactu in Spain) through proper separation of concerns.
