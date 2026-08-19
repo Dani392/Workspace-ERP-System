@@ -45,7 +45,7 @@ Beyond just adding up revenue, the system evaluates the quality of effort. It us
 #### 3. Financial Analytics (Studio Dashboard)
 A performance dashboard that automatically cross-references revenue (inflows) and expenses (outflows/payments) to calculate real cash flow. It incorporates a margin control system that automatically differentiates between internal operational expenses and purchases rebilled to clients, calculating the true net profit.
 * **Month-over-Month (MoM) Growth:** Automatic monitoring of the percentage variance (*Month-over-Month*) in both client retention/acquisition and net profit, facilitating the detection of short and long-term trends.
-* **Data Visualization:** Dynamic bar charts displaying the profit balance and operating margin, offering an instant financial snapshot.
+* **Data Visualization:** Dynamic bar charts displaying the profit balance and operating margin, providing an instant financial overview.
 
 > ![Studio Dashboard](assets/images/Estudio.jpg)
 
