@@ -21,7 +21,7 @@ To ensure data integrity and allow simultaneous access by multiple users without
 
 > ![Real-Time Data Flow](assets/videos/include_data.gif)
 
-* **Relational Database Emulation (SQL Views):** Dedicated `QUERY` tabs process, filter, and "flatten" consolidated information regarding clients, team, and expenses. This approach mimics the behavior of "Views" in traditional relational databases, optimizing search performance and leaving the structure ready for future mobile interface integrations.
+* **Relational Database Emulation (SQL Views):** Using tabs configured with the `QUERY` function, the system processes, filters, and "flattens" consolidated information regarding clients, team, and expenses. This approach mimics the behavior of "Views" in traditional relational databases, optimizing search performance and leaving the structure ready for future mobile interface integrations.
 
 ---
 
