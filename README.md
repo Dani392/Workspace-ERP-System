@@ -17,6 +17,10 @@ To ensure data integrity and allow simultaneous access by multiple users without
 
 * **Decentralized Entry Nodes:** Employees and managers log their hours or expenses in individual spreadsheets (separate instances). This acts as a data collection *frontend* that isolates and protects the business logic from the central Dashboard.
 * **Dynamic Synchronization (`IMPORTRANGE`):** The system maintains two-way, real-time communication. The master file feeds active data to peripheral nodes (e.g., the client dropdown menu). If a client is deactivated in the central panel, their access is instantly revoked across all worker sheets, ensuring global consistency.
+* **Real-Time Data Flow:** Data entered by employees in their isolated environments instantly cascades into the central ERP engine and financial dashboards without manual refreshing.
+
+> ![Real-Time Data Flow](assets/videos/include_data.gif)
+
 * **Relational Database Emulation (SQL Views):** Dedicated `QUERY` tabs process, filter, and "flatten" consolidated information regarding clients, team, and expenses. This approach mimics the behavior of "Views" in traditional relational databases, optimizing search performance and leaving the structure ready for future mobile interface integrations.
 
 ---
@@ -55,11 +59,34 @@ The system features monthly configuration panels with a clean interface based on
 #### 5. Operational Expense Control
 * **Automated Classification:** Purchase management using concepts and pivot tables that summarize capital outflows in real-time, allowing an at-a-glance audit of spending areas.
 
+#### 6. Automated Employee Provisioning (Onboarding)
+A custom frontend form that triggers a complex Apps Script sequence to securely onboard new workers in seconds.
+* **Zero-Touch Provisioning:** The script validates inputs, duplicates template files, assigns user variables, and structures the specific `IMPORTRANGE` links for the new employee.
+* **Dynamic SQL Injection:** The backend engine automatically locates and safely rewrites the master `QUERY` formulas in the core database to include the new employee's data streams, ensuring the ecosystem updates autonomously without breaking existing financial structures.
+
+> ![Automated Onboarding](assets/videos/Alta_Trabajador.gif)
+
 ---
 
 ### 💻 Automation Logic (Apps Script)
 
-The core of the billing is powered by JavaScript code integrated into the Workspace environment. The engine can calculate dynamic column shifts to process billing for any month of the year using a single mathematical function:
+The core of the system is powered by advanced JavaScript code integrated into the Workspace environment.
+
+**Dynamic Matrix Injection:**
+The onboarding script is capable of reading active spreadsheet formulas, injecting new data array arguments, and deploying them to update the ecosystem on the fly.
+
+```javascript
+// Example: Dynamic SQL injection to update Central ERP Queries
+var formQuery = celdaQuery.getFormula();
+if (formQuery !== "") {
+  // Automatically injects the new employee's tab into the master array
+  var nuevaFormQuery = formQuery.replace("};", "; '" + nombrePestañaHoras + "'!A2:E};");
+  celdaQuery.setFormula(nuevaFormQuery);
+}
+```
+
+**Dynamic Billing Engine:**
+The engine calculates dynamic column shifts to process billing for any month of the year using a single mathematical function:
 
 ```javascript
 // Example of the dynamic month detection engine for billing
@@ -73,9 +100,6 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
   }
 }
 ```
-
----
-
 ### 🚀 Scalability & Future Roadmap
 
 Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be decoupled from the spreadsheet interface. Next scalability steps include:
