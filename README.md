@@ -8,6 +8,7 @@ This project was born from the need to go beyond traditional spreadsheets, trans
 * **Automated Billing:** Generation of PDF invoices with dynamic tax calculation (VAT/Income Tax) via Apps Script.
 * **Decentralized Architecture:** Individual data entry nodes for workers, synced in real-time with a central Dashboard.
 * **Integrated Business Intelligence:** Custom algorithm to calculate and visualize the real performance and profitability of each client account.
+* **Dynamic Employee Onboarding:** Zero-touch provisioning system that securely duplicates user environments and autonomously injects new data arrays into the master SQL-like queries.
 
 ---
 
@@ -100,6 +101,8 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
   }
 }
 ```
+---
+
 ### 🚀 Scalability & Future Roadmap
 
 Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be decoupled from the spreadsheet interface. Next scalability steps include:
