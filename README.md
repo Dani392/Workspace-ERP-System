@@ -105,8 +105,8 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
 
 ### 🚀 Scalability & Future Roadmap
 
-Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be decoupled from the spreadsheet interface. Next scalability steps include:
+Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be completely decoupled from the spreadsheet interface. Next scalability steps include:
 
-* **Mobile Frontend (AppSheet):** Transition from spreadsheet-based entry nodes to a native mobile app. This will allow workers to log hours and capture expense receipts directly from their phones, injecting data into the ERP in real-time.
+* **Frontend Decoupling (AppSheet / Flutter / Python):** Transitioning from spreadsheet-based entry nodes to native applications. This scalable approach supports rapid deployment via low-code platforms like AppSheet, or fully custom, license-free frontends (using Flutter or Python) by deploying Google Apps Script as a REST API. This headless architecture allows workers to log data from their phones in real-time while handling row-level security independently.
 * **Executive Dashboards (Looker Studio & Power BI):** Connecting the master database to advanced business intelligence tools like Looker Studio (for native ecosystem integration) or Microsoft Power BI (for enterprise analytics). This will provide decision-makers with advanced graphical visualization of financial status and profitability, completely decoupled from the spreadsheet engine.
 * **API Integration (Tax Compliance):** Evolving the billing engine to act as a data pre-processor. The system prepares the tax base and business logic to export structured payloads (JSON) to certified external billing gateways, ensuring regulatory compliance (e.g., VeriFactu in Spain) through proper separation of concerns.
