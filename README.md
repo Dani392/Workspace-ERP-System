@@ -108,5 +108,5 @@ if (columna >= 13 && (columna - 13) % 10 === 0) {
 Thanks to the flattened and centralized data structure via `QUERY` functions, the system's core acts as a robust backend ready to be decoupled from the spreadsheet interface. Next scalability steps include:
 
 * **Mobile Frontend (AppSheet):** Transition from spreadsheet-based entry nodes to a native mobile app. This will allow workers to log hours and capture expense receipts directly from their phones, injecting data into the ERP in real-time.
-* **Executive Dashboards (Looker Studio):** Connecting the master Dashboard to interactive Looker Studio panels. This will provide managers and executives with advanced graphical visualization of financial status and profitability, without needing access to the database engine.
+* **Executive Dashboards (Looker Studio):** Connecting the master Dashboard to interactive Looker Studio panels. This will provide decision-makers with advanced graphical visualization of financial status and profitability, without needing access to the database engine.
 * **API Integration (Tax Compliance):** Evolving the billing engine to act as a data pre-processor. The system prepares the tax base and business logic to export structured payloads (JSON) to certified external billing gateways, ensuring regulatory compliance (e.g., VeriFactu in Spain) through proper separation of concerns.
